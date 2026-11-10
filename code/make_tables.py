@@ -101,5 +101,11 @@ S += ['**Table S7.** Weighted prevalence (%) by survey wave\n',
       '\n\nNo control (0 of 3) by employment status (weighted %):\n\n',
       md(t5.rename(columns={'wave': 'Year', 'employee': 'Employees', 'own_account': 'Own-account', 'employer': 'Employers', 'unpaid_family': 'Unpaid family'})),
       '\n\nInterview mode: paper questionnaires in 2010–2011; tablet computer-assisted personal interviewing from 2014 (survey quality and fieldwork reports).\n']
+t13 = rd('T13_format_comparison.csv')
+xt = rd('T13b_format_xtab.csv', index_col=0).iloc[:, 0]
+S += ['\n\\newpage\n', '**Table S8.** Post hoc comparison of response formats: 5-point item "able to apply your own ideas in your work" (rarely/never vs more often) and the yes/no control items (PR, 95% CI)\n',
+      md(t13),
+      f"\n\n*2010–2017 only. Joint model = both measures entered together with all covariates. Weighted prevalence of the low own-ideas response: {xt['low_ideas_pct']:.1f}% overall; "
+      f"{xt['low_ideas_pct_full']:.1f}% with full, {xt['low_ideas_pct_partial']:.1f}% with partial, and {xt['low_ideas_pct_none']:.1f}% with no control on the yes/no items.\n"]
 open(os.path.join(M, 'supplementary.md'), 'w').write('\n'.join(S))
 print('tables written')

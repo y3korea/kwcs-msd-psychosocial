@@ -14,6 +14,7 @@ Pooled cross-sectional analysis of the 2nd–7th waves (2010–2023) of the Kore
 - estimates prevalence ratios by weighted modified Poisson regression with robust variance;
 - tests heterogeneity by employment status (employees vs self-employed; multiplicative and additive scales);
 - uses non-musculoskeletal health problems (headache/eye strain, fatigue, hearing, skin) as negative-control outcomes;
+- compares response formats post hoc (5-point own-ideas item vs yes/no control items);
 - runs sensitivity analyses (control count and single items, unweighted, alternative adjustment sets, wave- and age-stratified estimates, stratum-clustered variance for 2023).
 
 ## Data
@@ -30,6 +31,7 @@ python code/r1/r1_03_analysis.py     # main models, stratified/interaction, sens
 python code/r1/r1_04_negcontrol.py   # negative-control outcomes
 python code/r1/r1_05_extra.py        # control count, single items, 2023 stratum-clustered variance
 python code/r1/r1_06_figdata.py      # figure inputs
+python code/r1/r1_07_format.py       # post hoc: 5-point vs yes/no control items
 python code/figures.py               # figures -> output/figures/
 python code/make_tables.py           # tables -> output/tables/
 ```
